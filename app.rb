@@ -8,8 +8,12 @@ require_relative './idea_usage_fetcher'
 
 include IdeaCellular
 
-set :database, {adapter: "sqlite3", database: "some.sqlite3"}
-set :port, 6060
+if ENV['DATABASE_URL']
+  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+else
+  set :database, {adapter: "sqlite3", database: "some.sqlite3"}
+end
+
 
 class Session < ActiveRecord::Base
 end

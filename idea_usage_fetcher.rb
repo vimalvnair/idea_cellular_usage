@@ -8,7 +8,7 @@ module IdeaCellular
     res = Net::HTTP.start(uri.hostname, uri.port,  :use_ssl => true) do |http|
       http.request(req)
     end
-    puts "GET: #{res.code}"
+    puts "GET: #{res.code} #{url}"
     res
   end
 
@@ -22,7 +22,7 @@ module IdeaCellular
     res = Net::HTTP.start(uri.hostname, uri.port,  :use_ssl => true) do |http|
       http.request(req)
     end
-    puts "POST: #{res.code}"
+    puts "POST: #{res.code} #{url}"
     res
   end
 
@@ -33,7 +33,6 @@ module IdeaCellular
     scr = html.css("script")
     res_script_text = scr.select{|b| b.text.include?("LoginAction") }.first.text
     path = res_script_text.match(/action=(.*?);/)[1]
-
     login_url = host + path.tr("'", "")
   end
 
