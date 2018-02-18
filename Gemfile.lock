@@ -20,6 +20,7 @@ GEM
     mustermann (1.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
+    pg (1.0.0)
     puma (3.11.2)
     rack (2.0.3)
     rack-protection (2.0.0)
@@ -45,6 +46,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   nokogiri
+  pg
   puma
   rake
   sinatra
