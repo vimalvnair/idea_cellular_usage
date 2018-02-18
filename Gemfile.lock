@@ -20,7 +20,6 @@ GEM
     mustermann (1.0.0)
     nokogiri (1.7.1)
       mini_portile2 (~> 2.1.0)
-    pg (0.21.0)
     rack (2.0.3)
     rack-protection (2.0.0)
       rack
@@ -45,11 +44,10 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   nokogiri
-  pg
   rake
   sinatra
   sinatra-activerecord
   sqlite3
 
 BUNDLED WITH
-   1.15.3
+   1.16.1
