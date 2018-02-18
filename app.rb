@@ -1,6 +1,7 @@
 require 'sinatra'
 require 'active_record'
 require "sinatra/activerecord"
+require 'pg'
 require "nokogiri"
 require 'net/http'
 require 'yaml'
