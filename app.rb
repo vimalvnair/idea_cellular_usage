@@ -8,11 +8,14 @@ require_relative './idea_usage_fetcher'
 
 include IdeaCellular
 
-if ENV['DATABASE_URL']
-  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
-else
+configure :production do
   set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'your_database_name', pool: 2, username: 'your_username', password: 'your_password'}
 end
+
+#if ENV['DATABASE_URL']
+#  ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
+#else
+#end
 
 
 class Session < ActiveRecord::Base
