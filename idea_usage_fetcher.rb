@@ -22,7 +22,7 @@ module IdeaCellular
     res = Net::HTTP.start(uri.hostname, uri.port,  :use_ssl => true) do |http|
       http.request(req)
     end
-    puts "POST: #{res.code} #{url}"
+    puts "POST: #{res.code} #{url} data :#{data}"
     res
   end
 
@@ -60,7 +60,7 @@ module IdeaCellular
     cookie = login_res.get_fields('Set-Cookie').map{|c| c.gsub("Path=/;", "").gsub("HttpOnly", "").gsub(";", "").strip}.join('; ')
     Session.delete_all
     Session.create(cookie: cookie)
-    puts "Cookie from network..." 
+    puts "Cookie from network...#{params}" 
     cookie
   end
 
