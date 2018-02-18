@@ -8,7 +8,7 @@ module IdeaCellular
     res = Net::HTTP.start(uri.hostname, uri.port,  :use_ssl => true) do |http|
       http.request(req)
     end
-    puts "GET: #{res.code} #{url}"
+    puts "GET: #{res.code} #{url} #{res.body}"
     res
   end
 
@@ -22,7 +22,7 @@ module IdeaCellular
     res = Net::HTTP.start(uri.hostname, uri.port,  :use_ssl => true) do |http|
       http.request(req)
     end
-    puts "POST: #{res.code} #{url} data :#{data}"
+    puts "POST: #{res.code} #{url} data :#{data} resp: #{res.body}"
     res
   end
 
