@@ -6,7 +6,7 @@ gem 'sinatra-activerecord'
 gem 'rake'
 gem 'nokogiri'
 gem 'puma'
-gem 'pg'
+gem 'pg', '0.21.0'
 
 group :development do
   gem 'sqlite3'
