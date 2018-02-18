@@ -10,7 +10,7 @@ require_relative './idea_usage_fetcher'
 include IdeaCellular
 
 configure :production do
-  set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'your_database_name', pool: 2, username: 'your_username', password: 'your_password'}
+  set :database, {adapter: 'postgresql',  encoding: 'unicode', database: ENV['DB_NAME'], pool: 2, username: ENV['DB_USER'], password: ENV['DB_PASSWORD'], host: ENV['DB_HOST'], port: ENV['DB_PORT']}
 end
 
 configure :development do
