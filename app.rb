@@ -11,7 +11,7 @@ include IdeaCellular
 if ENV['DATABASE_URL']
   ActiveRecord::Base.establish_connection(ENV['DATABASE_URL'])
 else
-  set :database, {adapter: "sqlite3", database: "some.sqlite3"}
+  set :database, {adapter: 'postgresql',  encoding: 'unicode', database: 'your_database_name', pool: 2, username: 'your_username', password: 'your_password'}
 end
 
 
